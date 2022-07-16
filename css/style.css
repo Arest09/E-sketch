@@ -1,0 +1,44 @@
+main{
+    height: 100%;;
+}
+
+.container{
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dask{
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    display: grid;
+}
+
+
+.dask__item{
+    width: 10px;
+    height: 10px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__color{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.menu__range-num ,.menu__color{
+    margin-bottom: 30px;
+}
