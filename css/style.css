@@ -1,44 +1,113 @@
-main{
-    height: 100%;;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&display=swap");
+
+body {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
-.container{
-    height: 100%;
-    max-width: 800px;
+main {
+    font-family: "Rubik Moonrocks", cursive;
+    flex-grow: 1;
+}
+
+
+
+.container {
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.content{
-    height: 100%;
+.content__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.dask{
-    height: 500px;
-    width: 500px;
-    border: 1px solid black;
-    display: grid;
+.content__title {
+    padding: 40px 0 45px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 35px;
 }
 
+.dask {
+    height: 500px;
+    width: 500px;
+    display: grid;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
 
-.dask__item{
+.dask__item {
     width: 10px;
     height: 10px;
 }
 
-.menu{
+.menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
+    max-width: 300px;
 }
 
-.menu__color{
+
+.menu__range {
+    width: 100%;
+}
+
+.menu__color {
     display: block;
     margin-bottom: 10px;
 }
 
-.menu__range-num ,.menu__color{
-    margin-bottom: 30px;
+.menu__range-num {
+    margin-bottom: 25px;
+}
+
+.menu__color {
+    margin-bottom: 60px;
+    display: block;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: skyblue;
+    cursor: pointer;
+}
+
+.menu__reset-btn {
+    margin-bottom: 35px;
+}
+
+button {
+    color: #fff;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    background-color: rgb(61, 54, 54);
+    padding: 15px 10px;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+}
+
+footer {
+    padding: 40px 0;
+}
+
+.social-link__item {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-github {
+    font-size: 45px;
+    display: flex;
+    transition: all 0.5s;
+}
+
+.fa-github:hover{
+    transform: translate(10px,-10px);
 }

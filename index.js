@@ -8,6 +8,7 @@ const range = document.querySelector('.menu__range')
 const colorPick = document.querySelector('.menu__color')
 const resetBtn = document.querySelector('.menu__reset-btn')
 const rainBow = document.querySelector('.menu__rainbow-btn')
+const menu = document.querySelector('.menu')
 
 function grid(column) {
     dask.style = `grid-template-columns: repeat(${column},1fr);`
@@ -17,7 +18,7 @@ function grid(column) {
 function makePix() {
     let size = (Math.sqrt((500 * 500) / (range.value * range.value)));
     console.log(size)
-    let column = Math.trunc(500 / size);
+    let column = Math.round(500 / size); 
     for (let i = 0; i < range.value * range.value; i++) {
         let pixels = document.createElement('div');
         pixels.classList.add('dask__item');
@@ -67,10 +68,20 @@ function rainbowColor(event) {
     }
 }
 
+function typeOfColor() {
+    console.log('click')
+    if (event.target.closest('.menu__color')) {
+        dask.addEventListener('mouseover', color)
+    } else if (event.target.closest('.menu__rainbow-btn')) {
+        dask.addEventListener('mouseover', rainbowColor)
+    } else {
+        return;
+    }
+}
+
 range.addEventListener('input', rangeNum)
-range.addEventListener('input', makePix)
+range.addEventListener('mouseup', makePix)
+range.addEventListener('input', reset)
 range.addEventListener('click', changeSize)
-dask.addEventListener('mouseover', color)
-dask.addEventListener('mousedown', color)
 resetBtn.addEventListener('click', reset)
-dask.addEventListener('click', rainbowColor)
+menu.addEventListener('click', typeOfColor)
