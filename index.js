@@ -17,7 +17,6 @@ function grid(column) {
 
 function makePix() {
     let size = (Math.sqrt((500 * 500) / (range.value * range.value)));
-    console.log(size)
     let column = Math.round(500 / size); 
     for (let i = 0; i < range.value * range.value; i++) {
         let pixels = document.createElement('div');
@@ -26,7 +25,6 @@ function makePix() {
         pixels.style.width = `${size}px`;
         pixels.style.height = `${size}px`;
     }
-    console.log(column, size)
     grid(column);
 
 }
@@ -68,15 +66,23 @@ function rainbowColor(event) {
     }
 }
 
-function typeOfColor() {
-    console.log('click')
+function typeOfColor(event) {
+    
     if (event.target.closest('.menu__color')) {
         dask.addEventListener('mouseover', color)
+        dask.removeEventListener('mouseover',rainbowColor)
+      
     } else if (event.target.closest('.menu__rainbow-btn')) {
         dask.addEventListener('mouseover', rainbowColor)
-    } else {
-        return;
-    }
+        dask.removeEventListener('mouseover',color)
+        console.log('rainbow')
+      
+    } 
+  
+}
+
+function clickAndMove(event) {
+    return event.type
 }
 
 range.addEventListener('input', rangeNum)
